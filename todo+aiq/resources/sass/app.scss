@@ -1,0 +1,128 @@
+// The following two lines import the default Sencha Touch theme. If you are building
+// a new theme, remove them and the add your own CSS on top of the base CSS (which
+// is already included in your app.json file).
+@import 'sencha-touch/default';
+
+// Custom code goes here..
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+.header {
+    border-bottom: 1px solid #CCC;
+    height: 50px;
+}
+
+#titleField {
+    width: 100%;
+    padding: 10px 5px 10px 10px;
+    input {
+        width: 100%;
+        height: 30px;
+        padding-left: 0.5em;
+        border: 1px solid #CCC;
+        background-image: -webkit-linear-gradient(top, #EEE, #FFF 30%);
+        background-image: linear-gradient(to bottom, #EEE, #FFF 30%);
+        appearance: none;
+        border-radius: 0;
+    }
+}
+
+#addButton {
+    width: 15%;
+    height: 30px;
+    margin: 10px 10px 10px 5px;
+    line-height: 30px;
+    border: 1px solid #CCC;
+    background-image: -webkit-linear-gradient(top, #FEFEFE, #E1E1E1);
+    background-image: linear-gradient(to bottom, #FEFEFE, #E1E1E1);
+
+    &:active {
+        background-image: -webkit-linear-gradient(top, #C8C8C8, #EDEDED);
+        background-image: linear-gradient(to bottom, #C8C8C8, #EDEDED);
+    }
+}
+
+.x-list-item {
+    > * {
+        padding: 0 !important;
+    }
+}
+
+#todoList {
+    height: 100%;
+}
+
+.x-list-item {
+    background-color: #FFF;
+    position: relative;
+    padding: 10px 10px 10px 45px;
+    border-bottom: 1px solid #CCC;
+    vertical-align: middle;
+    height: 39px;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 11px;
+        left: 15px;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #A9A9A9;
+        border-radius: 50%;
+        background: #F2F2F2;
+        vertical-align: middle;
+        z-index: 1;
+    }
+
+    &.x-item-selected {
+        background-color: #FFF !important;
+        text-decoration: line-through;
+        font-weight: bold;
+
+        &:before {
+            border-color: #5E5E5E;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 13px;
+            left: 17px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #323232;
+            z-index: 2;
+        }
+    }
+}
+
+.footer {
+    height: 40px;
+    padding: 10px;
+    border-top: 1px solid #CCC;
+}
+
+#clearButton {
+    border: 0;
+    height: 18px;
+    padding: 0 0 0 20px;
+    text-decoration: underline;
+    background: url(/resources/images/trash.png) no-repeat left center;
+    background-size: contain;
+}
+
+// Examples of using the icon mixin:
+// @include icon('user');
