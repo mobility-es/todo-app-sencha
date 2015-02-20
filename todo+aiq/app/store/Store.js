@@ -9,7 +9,11 @@ Ext.define('todo.store.Store', {
         autoSync: true,
         autoLoad: false,
         model: 'todo.model.TODO',
-        proxy: 'datasync'
+        proxy: 'datasync',
+        sorters: [{
+            property : 'createdAt',
+            direction: 'ASC'
+        }]
     },
 
     initialize: function() {

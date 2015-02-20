@@ -5,7 +5,11 @@ Ext.define('todo.store.Store', {
         storeId: 'todos',
         autoSync: true,
         autoLoad: false,
-        model: 'todo.model.TODO'
+        model: 'todo.model.TODO',
+        sorters: [{
+            property : 'createdAt',
+            direction: 'ASC'
+        }]
     },
 
     completed: function() {

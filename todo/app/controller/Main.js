@@ -40,7 +40,8 @@ Ext.define('todo.controller.Main', {
     onAdd: function() {
         var titleField = this.getTitleField();
         this.store.add({
-            title: titleField.getValue()
+            title: titleField.getValue(),
+            createdAt: Date.now()
         });
         titleField.reset();
     },
